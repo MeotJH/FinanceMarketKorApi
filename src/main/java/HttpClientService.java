@@ -25,7 +25,11 @@ public class HttpClientService {
 
     private String getCodeGenerate(){
 
-        String code ="";
+        DateUtil dateUtil = new DateUtil();
+
+        String code = "";
+        String date = dateUtil.getDate();
+
 
         try {
 
@@ -34,7 +38,7 @@ public class HttpClientService {
                     .setHost("data.krx.co.kr")
                     .setPath("/comm/fileDn/GenerateOTP/generate.cmd")
                     .setParameter("mktId", "ALL")
-                    .setParameter("trdDd", "20220107")
+                    .setParameter("trdDd", date)
                     .setParameter("share", "1")
                     .setParameter("money", "1")
                     .setParameter("csvxls_isNo", "false")
@@ -87,7 +91,7 @@ public class HttpClientService {
         return excelData;
     }
 
-    public void makeExcelFile(){
+    public void getMarketDataOne(){
 
         InputStream excelData = getFinanceData();
         try {
