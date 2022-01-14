@@ -25,10 +25,12 @@ public class HttpClientService {
 
     private String getCodeGenerate(){
 
-        DateUtil dateUtil = new DateUtil();
+        DateUtil dateUtil = new DateUtil("20220114");
 
         String code = "";
         String date = dateUtil.getDate();
+
+        System.out.println("this is date: " + date);
 
 
         try {
