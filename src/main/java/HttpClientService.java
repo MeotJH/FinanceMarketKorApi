@@ -18,14 +18,15 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HttpClientService {
 
-    private String getCodeGenerate(){
+    private String getCodeGenerate() throws ParseException {
 
-        DateUtil dateUtil = new DateUtil("20220114");
+        DateUtil dateUtil = new DateUtil("20220107");
 
         String code = "";
         String date = dateUtil.getDate();
@@ -84,7 +85,7 @@ public class HttpClientService {
 
             e.printStackTrace();
 
-        } catch (IOException e) {
+        } catch (IOException | ParseException e) {
 
             e.printStackTrace();
 

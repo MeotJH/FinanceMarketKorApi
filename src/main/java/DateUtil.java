@@ -1,23 +1,18 @@
-import com.sun.org.apache.xpath.internal.objects.XString;
-
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 public class DateUtil {
 
-    private String date;
+    private String _date;
 
     public <date> DateUtil(String date){
-        this.date = date;
+        this._date = date;
     }
 
-    public String getDate() {
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
-        Calendar c1 = Calendar.getInstance();
-        String strToday = sdf.format(c1.getTime());
-
-        return strToday;
-
+    public String getDate() throws ParseException {
+        return this._date;
     }
 }
